@@ -1,12 +1,10 @@
 import { useLocation, Link } from "react-router-dom";
 import React, { useState } from "react";
 import '../Styles/Dashboard.css'
-function Dashboard({ expenses }) {
+function Dashboard({ expenses, salary, setSalary }) {
     
     const location = useLocation();
     const username = location.state?.username;
-
-    const [salary, setSalary] = useState(0);
 
     function handleSalary() {
 

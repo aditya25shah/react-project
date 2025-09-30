@@ -7,8 +7,8 @@ import AddExpense from "./Components/AddExpense";
 import React, { useState } from "react";
 
 function App() {
-  
   const [expenses, setExpenses] = useState([]);
+  const [salary, setSalary] = useState(0);
 
   return (
     <Router>
@@ -20,11 +20,15 @@ function App() {
         />
         <Route
           path="/dashboard"
-          element={<Dashboard expenses={expenses} />}
+          element={
+            <Dashboard
+              expenses={expenses}
+              salary={salary}
+              setSalary={setSalary} 
+            />
+          }
         />
-        <Route
-          path="/expenses"
-          element={<ExpenseList expenses={expenses} />}
+        <Route path="/expenses" element={<ExpenseList expenses={expenses} />}
         />
         <Route path="/signup" element={<Signup />} />
       </Routes>

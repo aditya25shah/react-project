@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../Styles/AddExpense.css'
+import '../Styles/AddExpenses.css'
 
 function AddExpense({ expenses, setExpenses }) {
   const [title, setTitle] = useState("");
