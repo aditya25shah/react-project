@@ -1,19 +1,64 @@
-import { BrowserRouter, useLocation, useNavigate } from "react-router-dom"
-import {React, useState} from 'react'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import '../Styles/AddExpense.css'
 
-function AddExpense(){
-    
-    const[expenses,setexpenses]= useState(0);
-    const[date,setdate]= useState("02-04-2025");
-    const[category,setcategory] = useState("");
+function AddExpense({ expenses, setExpenses }) {
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
+  const [category, setCategory] = useState("");
+  const navigate = useNavigate();
 
-    
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    return(
-        <>
-        </>
-    );
+    const newExpense = {
+      title,
+      amount: Number(amount),
+      date,
+      category,
+    };
+
+    setExpenses([...expenses, newExpense]);
+
+    navigate("/dashboard");
+  };
+
+  return (
+    <div>
+      <h2>Add Expense</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Expense Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          required
+        />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        />
+
+        <button type="submit">Add Expense</button>
+      </form>
+    </div>
+  );
 }
 
-
-export default AddExpense
+export default AddExpense;

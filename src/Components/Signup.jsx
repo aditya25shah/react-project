@@ -1,5 +1,6 @@
 import {useState, React} from 'react'
 import { useNavigate } from 'react-router-dom'
+import '../Styles/Signup.css'
 
 function Signup(){
 

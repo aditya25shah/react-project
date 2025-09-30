@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+div {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  background: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  border-color: #fa709a;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(250, 112, 154, 0.1);
+  transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #999;
+}
+
+input[type="date"] {
+  color: #666;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: opacity(0.6);
+  transition: all 0.3s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: opacity(1);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(250, 112, 154, 0.6);
+}
+
+button[type="submit"]:active {
+  transform: translateY(-1px);
+}
+
+/* Animation for form inputs */
+input {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+input:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+input:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+input:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+input:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+button {
+  animation: fadeInUp 0.6s ease-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  div {
+    padding: 30px 25px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  
+  button[type="submit"] {
+    font-size: 16px;
+    padding: 13px;
+  }
+}
